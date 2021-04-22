@@ -310,8 +310,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Arrow: {fileID: 0}
-  Player: {fileID: 0}
+  Arrow: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
+  Player: {fileID: 1800866403}
   HitTime: 0.3
 --- !u!1001 &1800866402
 PrefabInstance:
@@ -374,3 +374,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+--- !u!50 &1800866403 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4014350158136067355, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+  m_PrefabInstance: {fileID: 1800866402}
+  m_PrefabAsset: {fileID: 0}

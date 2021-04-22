@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class AggressiveGoblin : Enemy
 {
-    private bool isGrounded = true;
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (Player.transform.position.x > transform.position.x)
         {
