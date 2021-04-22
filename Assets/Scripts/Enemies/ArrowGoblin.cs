@@ -9,7 +9,7 @@ public class ArrowGoblin : Enemy
 
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         moveVelocity = 0;
         if(Player.transform.position.x > transform.position.x && direction == Vector2.left)

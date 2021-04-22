@@ -10,7 +10,7 @@ public class LeftRightGoblin : Enemy
     private bool firstCollision = true;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
 
         //Left Right Movement

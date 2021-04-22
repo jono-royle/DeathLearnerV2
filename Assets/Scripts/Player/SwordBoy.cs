@@ -43,7 +43,7 @@ public class SwordBoy : MonoBehaviour
         }
 
         //Jumping
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             if (isGrounded)
             {
