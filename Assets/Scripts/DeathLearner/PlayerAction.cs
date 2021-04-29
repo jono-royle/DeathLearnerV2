@@ -10,13 +10,14 @@ namespace Assets.Scripts.DeathLearner
     {
         public PlayerAction()
         {
-            ButtonsPressed = new List<ButtonPress>();
+            //ButtonsPressed = new List<ButtonPress>();
             ArrowPositions = new List<Position>();
             PlayerPosition = new Position();
             EnemyPosition = new Position();
         }
 
-        public List<ButtonPress> ButtonsPressed { get; set; }
+        //public List<ButtonPress> ButtonsPressed { get; set; }
+        public ButtonPress ButtonPressed { get; set; }
         public Position PlayerPosition { get; set; }
         public Position EnemyPosition { get; set; }
         public List<Position> ArrowPositions { get; set; }
