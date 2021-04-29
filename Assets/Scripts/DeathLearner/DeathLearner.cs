@@ -6,8 +6,10 @@ using UnityEngine;
 public class DeathLearner : MonoBehaviour
 {
     public float WaitTimer = 0.5f;
+    public Rigidbody2D player;
+    public Rigidbody2D enemy;
 
-    private List<PlayerAction> playerActions;
+    private List<PlayerAction> playerActions = new List<PlayerAction>();
 
     // Update is called once per frame
     void Update()
@@ -53,6 +55,11 @@ public class DeathLearner : MonoBehaviour
             WaitTimer = 0.5f;
         }
 
+        playerActions.Add(playerAction);
+    }
 
+    public void RecordDeath()
+    {
+        var test = playerActions;
     }
 }
