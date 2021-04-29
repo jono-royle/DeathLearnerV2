@@ -237,6 +237,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2070210936}
+        m_TargetAssemblyTypeName: DeathLearner, Assembly-CSharp
+        m_MethodName: RecordDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Arrow: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
   Player: {fileID: 107648895}
   HitTime: 0.3
@@ -355,3 +367,84 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7413983992548163980, guid: 2e41b785f7638fe419292081f2311470, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e41b785f7638fe419292081f2311470, type: 3}
+--- !u!50 &1745034271 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7413983992548163982, guid: 2e41b785f7638fe419292081f2311470, type: 3}
+  m_PrefabInstance: {fileID: 1745034270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2070210935
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3839497837848226515, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1745034271}
+    - target: {fileID: 3839497837848226515, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 107648895}
+    - target: {fileID: 3971638231998889359, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_Name
+      value: DeathLearner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8964865
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.1370902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.210208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333097241006203431, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+--- !u!114 &2070210936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3839497837848226515, guid: 7bf96d7fc6ba0784d82bd4a52a01d045, type: 3}
+  m_PrefabInstance: {fileID: 2070210935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05dbff997c99cde4d8cf2b4572978164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
