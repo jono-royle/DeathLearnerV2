@@ -19,7 +19,9 @@ namespace Assets.Scripts.Enemies
         public UnityEvent EnemyDeathEvent;
         public Rigidbody2D Arrow;
         public Rigidbody2D Player;
+        public Sword Sword;
         public float HitTime = 0.3f;
+        public float PlungeSpeed = -7f;
 
         protected SpriteRenderer spriteRenderer;
         protected Vector2 direction = Vector2.left;
@@ -29,8 +31,10 @@ namespace Assets.Scripts.Enemies
         protected float hitTimer = 0;
         protected float moveVelocity = 0;
         protected bool isGrounded = true;
+        protected bool swordExists = false;
+        protected bool plunging = false;
 
-        void Start()
+        protected virtual void Start()
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
@@ -108,6 +112,32 @@ namespace Assets.Scripts.Enemies
                 isGrounded = false;
             }
         }
+
+        protected void SwingEnemySword()
+        {
+            var position = transform.position;
+            position.x += direction.x;
+            Sword sword = Instantiate(Sword, position, transform.rotation);
+            CharacterActions.SwingSword(direction, sword, gameObject.transform, swordDestroyed);
+            swordExists = true;
+        }
+
+        protected void PlungingAttack()
+        {
+            var position = transform.position;
+            position.y -= 1;
+            var rotate = Quaternion.Euler(0, 0, -90);
+            Sword sword = Instantiate(Sword, position, rotate);
+            CharacterActions.PlungingAttack(sword, gameObject.transform, swordDestroyed);
+            swordExists = true;
+        }
+
+        protected void Plunge()
+        {
+            plunging = true;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, PlungeSpeed);
+        }
+
         private void HealthCheck()
         {
             if (Health <= 0)
@@ -123,5 +153,10 @@ namespace Assets.Scripts.Enemies
             hitTimer -= Time.deltaTime;
         }
 
+        private void swordDestroyed()
+        {
+            plunging = false;
+            swordExists = false;
+        }
     }
 }

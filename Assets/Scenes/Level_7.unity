@@ -258,6 +258,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
     - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 9132026779182974203, guid: d804c4ecaf739ad4589abfc374110971, type: 3}
+    - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: Health
       value: 6
       objectReference: {fileID: 0}
