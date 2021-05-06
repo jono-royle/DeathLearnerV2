@@ -80,13 +80,15 @@ public class DeathLearner : MonoBehaviour
             playerAction.PlayerPosition= player.position;
             playerAction.EnemyPosition = enemy.position;
             playerAction.EnemyVelocity = enemy.velocity;
-            foreach(GameObject taggedEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
-            {
-                if(taggedEnemy.name == "RedArrow(Clone)")
-                {
-                    playerAction.ArrowPositions.Add(taggedEnemy.GetComponent<Rigidbody2D>().position);
-                }
-            }
+            //Commenting out arrows as MS machine learning cant handle variable column numbers.
+            //TODO: Maybe do closest arrow?
+            //foreach(GameObject taggedEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            //{
+            //    if(taggedEnemy.name == "RedArrow(Clone)")
+            //    {
+            //        playerAction.ArrowPositions.Add(taggedEnemy.GetComponent<Rigidbody2D>().position);
+            //    }
+            //}
             playerActions.Add(playerAction);
         }
 
