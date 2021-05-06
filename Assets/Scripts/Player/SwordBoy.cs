@@ -15,6 +15,7 @@ public class SwordBoy : MonoBehaviour
     public float ArrowCooldown = 1.5f;
     public float HitTime = 0.3f;
     public int PlayerHealth = 3;
+    public bool ChangeInitialDirection = false;
 
     private bool isGrounded = true;
     private Vector2 direction = Vector2.right;
@@ -30,6 +31,10 @@ public class SwordBoy : MonoBehaviour
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if (ChangeInitialDirection)
+        {
+            direction = CharacterActions.ChangeDirection(true, spriteRenderer, direction);
+        }
     }
 
     // Update is called once per frame
@@ -82,7 +87,7 @@ public class SwordBoy : MonoBehaviour
         //Fire Arrow
         if (Input.GetKey(KeyCode.F) && arrowTimer <= 0)
         {
-            FireCharacterArrow();
+            FirePlayerArrow();
         }
 
         //Swing Sword
@@ -90,7 +95,7 @@ public class SwordBoy : MonoBehaviour
         {
             if (isGrounded)
             {
-                SwingSword();
+                SwingPlayerSword();
             }
             else if(!plunging)
             {
@@ -104,18 +109,12 @@ public class SwordBoy : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
     }
 
-    private void SwingSword()
+    private void SwingPlayerSword()
     {
         var position = transform.position;
         position.x += direction.x;
         Sword sword = Instantiate(Sword, position, transform.rotation);
-        if (direction == Vector2.left)
-        {
-            var swordRenderer = sword.gameObject.GetComponent<SpriteRenderer>();
-            swordRenderer.flipX = true;
-        }
-        sword.transform.parent = gameObject.transform;
-        sword.SwordDestroyedEvent.AddListener(swordDestroyed);
+        CharacterActions.SwingSword(direction, sword, gameObject.transform, swordDestroyed);
         swordExists = true;
     }
 
@@ -125,10 +124,7 @@ public class SwordBoy : MonoBehaviour
         position.y -= 1;
         var rotate = Quaternion.Euler(0, 0, -90);
         Sword sword = Instantiate(Sword, position, rotate);
-        //sword.transform.Rotate(0, 90, 0);
-        sword.Midair = true;
-        sword.transform.parent = gameObject.transform;
-        sword.SwordDestroyedEvent.AddListener(swordDestroyed);
+        CharacterActions.PlungingAttack(sword, gameObject.transform, swordDestroyed);
         swordExists = true;
     }
 
@@ -138,7 +134,7 @@ public class SwordBoy : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, PlungeSpeed);
     }
 
-    private void FireCharacterArrow()
+    private void FirePlayerArrow()
     {
         if(arrowTimer <= 0)
         {

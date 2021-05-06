@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Static
 {
@@ -38,6 +39,24 @@ namespace Assets.Scripts.Static
                 arrowRenderer.flipX = true;
             }
             arrow.AddForce(direction * arrowSpeed);
+        }
+
+        public static void SwingSword(Vector2 direction, Sword sword, Transform parent, UnityAction swordDestroyed)
+        {
+            if (direction == Vector2.left)
+            {
+                var swordRenderer = sword.gameObject.GetComponent<SpriteRenderer>();
+                swordRenderer.flipX = true;
+            }
+            sword.transform.parent = parent;
+            sword.SwordDestroyedEvent.AddListener(swordDestroyed);
+        }
+
+        public static void PlungingAttack(Sword sword, Transform parent, UnityAction swordDestroyed)
+        {
+            sword.Midair = true;
+            sword.transform.parent = parent;
+            sword.SwordDestroyedEvent.AddListener(swordDestroyed);
         }
     }
 }

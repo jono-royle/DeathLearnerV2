@@ -17,10 +17,10 @@ namespace Assets.Scripts.Static
                 foreach (var playerAction in playerActions)
                 {
                     var actionLine = $"{ playerAction.ButtonPressed}\t{playerAction.PlayerPosition.x}\t{playerAction.PlayerPosition.y}\t{playerAction.EnemyPosition.x}\t{playerAction.EnemyPosition.y}\t{playerAction.EnemyVelocity.x}\t{playerAction.EnemyVelocity.y}";
-                    foreach (var arrow in playerAction.ArrowPositions)
-                    {
-                        actionLine += $"\t{arrow.x}\t{arrow.y}";
-                    }
+                    //foreach (var arrow in playerAction.ArrowPositions)
+                    //{
+                    //    actionLine += $"\t{arrow.x}\t{arrow.y}";
+                    //}
                     await writer.WriteLineAsync(actionLine);
                 }
             }
