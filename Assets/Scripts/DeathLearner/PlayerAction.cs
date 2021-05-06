@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.DeathLearner
 {
@@ -11,15 +12,17 @@ namespace Assets.Scripts.DeathLearner
         public PlayerAction()
         {
             //ButtonsPressed = new List<ButtonPress>();
-            ArrowPositions = new List<Position>();
-            PlayerPosition = new Position();
-            EnemyPosition = new Position();
+            ArrowPositions = new List<Vector2>();
+            PlayerPosition = new Vector2();
+            EnemyPosition = new Vector2();
+            EnemyVelocity = new Vector2();
         }
 
         //public List<ButtonPress> ButtonsPressed { get; set; }
         public ButtonPress ButtonPressed { get; set; }
-        public Position PlayerPosition { get; set; }
-        public Position EnemyPosition { get; set; }
-        public List<Position> ArrowPositions { get; set; }
+        public Vector2 PlayerPosition { get; set; }
+        public Vector2 EnemyPosition { get; set; }
+        public Vector2 EnemyVelocity { get; set; }
+        public List<Vector2> ArrowPositions { get; set; }
     }
 }
