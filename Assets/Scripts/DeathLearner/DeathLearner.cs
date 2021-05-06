@@ -1,4 +1,5 @@
 using Assets.Scripts.DeathLearner;
+using Assets.Scripts.Static;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -76,10 +77,16 @@ public class DeathLearner : MonoBehaviour
 
         if (actionRecorded == true)
         {
-            playerAction.PlayerPosition.PositionX = player.position.x;
-            playerAction.PlayerPosition.PositionY = player.position.y;
-            playerAction.EnemyPosition.PositionX = enemy.position.x;
-            playerAction.EnemyPosition.PositionY = enemy.position.y;
+            playerAction.PlayerPosition= player.position;
+            playerAction.EnemyPosition = enemy.position;
+            playerAction.EnemyVelocity = enemy.velocity;
+            foreach(GameObject taggedEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if(taggedEnemy.name == "RedArrow(Clone)")
+                {
+                    playerAction.ArrowPositions.Add(taggedEnemy.GetComponent<Rigidbody2D>().position);
+                }
+            }
             playerActions.Add(playerAction);
         }
 
@@ -88,18 +95,6 @@ public class DeathLearner : MonoBehaviour
     public async void RecordDeath()
     {
         deathRecorded = true;
-        await WriteTxtAsync();
-    }
-
-
-    public async Task WriteTxtAsync()
-    {
-        using (StreamWriter writer = new StreamWriter($"C:\\Users\\monoj\\UnityProjects\\MLTest\\DeathLearnTest1.txt", true))
-        {
-            foreach(var playerAction in playerActions)
-            {
-                await writer.WriteLineAsync($"{ playerAction.ButtonPressed}\t{playerAction.PlayerPosition.PositionX}\t{playerAction.PlayerPosition.PositionY}\t{playerAction.EnemyPosition.PositionX}\t{playerAction.EnemyPosition.PositionY}");
-            }
-        }
+        await MLTextWriter.WriteTxtAsync(playerActions);
     }
 }
