@@ -158,7 +158,7 @@ public class SwordBoy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && collision.otherCollider.gameObject.name != "Sword(Clone)")
         {
             PlayerHealth--;
             if (PlayerHealth <= 0)

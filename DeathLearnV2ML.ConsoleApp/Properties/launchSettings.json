@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DeathLearnV2ML.ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "Build"
+    }
+  }
+}
