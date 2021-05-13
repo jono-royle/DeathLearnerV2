@@ -1,0 +1,4 @@
+C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\obj\Debug\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.csprojAssemblyReference.cache
+C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\obj\Debug\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\obj\Debug\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.AssemblyInfo.cs
+C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\obj\Debug\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.csproj.CoreCompileInputs.cache
