@@ -1,6 +1,4 @@
 using Assets.Scripts.Static;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -97,7 +95,7 @@ public class SwordBoy : MonoBehaviour
             {
                 SwingPlayerSword();
             }
-            else if(!plunging)
+            else if (!plunging)
             {
                 PlungingAttack();
                 Plunge();
@@ -136,7 +134,7 @@ public class SwordBoy : MonoBehaviour
 
     private void FirePlayerArrow()
     {
-        if(arrowTimer <= 0)
+        if (arrowTimer <= 0)
         {
             var position = transform.position;
             Rigidbody2D arrow = Instantiate(Arrow, position, transform.rotation);
@@ -160,10 +158,10 @@ public class SwordBoy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy" && collision.otherCollider.gameObject.name != "Sword(Clone)")
+        if (collision.gameObject.tag == "Enemy")
         {
             PlayerHealth--;
-            if(PlayerHealth <= 0)
+            if (PlayerHealth <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -180,7 +178,7 @@ public class SwordBoy : MonoBehaviour
                 hitTimer = HitTime;
             }
         }
-        else if(collision.gameObject.tag == "Scenery")
+        else if (collision.gameObject.tag == "Scenery")
         {
             isGrounded = true;
         }

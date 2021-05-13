@@ -7,49 +7,39 @@ using System;
 using Assets.Scripts.Static;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 public class RoboSwordBoy : Enemy
 {
+    [DllImport("user32.dll")] static extern uint GetActiveWindow();
+    [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr hWnd);
+
     private Process compiler;
+    private IntPtr unityPtr;
     //private StreamWriter streamWriter;
+
+    private void Awake()
+    {
+        unityPtr = (IntPtr)GetActiveWindow();
+    }
 
     // Start is called before the first frame update
     protected override void Start()
     {
         direction = Vector2.right;
-        compiler = new Process();
-        compiler.StartInfo.FileName = "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\bin\\Release\\netcoreapp3.1\\DeathLearnV2ML.ConsoleApp.exe";
-        compiler.StartInfo.UseShellExecute = false;
-        compiler.StartInfo.RedirectStandardOutput = true;
-        compiler.StartInfo.RedirectStandardInput = true;
-        compiler.Start();
-        //streamWriter = compiler.StandardInput;
+        compiler = MLEngineStarter.StartMachineLearningEngine();
+        //This is an ugly hack - run the ML console app as a new process and then change focus back to unity. Would be better to run the
+        //ML in the unity program but can't get the ML packages to load in unity
+        Thread.Sleep(200);
+        SetForegroundWindow(unityPtr);
         base.Start();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        var inputString = $"{transform.position.x} {transform.position.y} {Player.position.x} {Player.position.y} {Player.velocity.x} {Player.velocity.y}";
-
-        compiler.StandardInput.WriteLine(inputString);
-        //streamWriter.WriteLine(inputString);
-        var prediction = compiler.StandardOutput.ReadLine();
-
-        //ModelInput inputData = new ModelInput()
-        //{
-        //    PlayerX = transform.position.x,
-        //    PlayerY = transform.position.y,
-        //    EnemyX = Player.position.x,
-        //    EnemyY = Player.position.y,
-        //    EnemyVelocityX = Player.velocity.x,
-        //    EnemyVelocityY = Player.velocity.y,
-        //};
-        //var predictionResult = ConsumeModel.Predict(inputData);
-        ButtonPress buttonPress;
-        if(!Enum.TryParse(prediction, out buttonPress)){
-            buttonPress = ButtonPress.None;
-        }
+        ButtonPress buttonPress = GetButtonPressFromMLEngine();
 
         if (plunging)
         {
@@ -114,5 +104,21 @@ public class RoboSwordBoy : Enemy
 
 
         base.Update();
+    }
+
+    private ButtonPress GetButtonPressFromMLEngine()
+    {
+        var inputString = $"{transform.position.x} {transform.position.y} {Player.position.x} {Player.position.y} {Player.velocity.x} {Player.velocity.y}";
+
+        compiler.StandardInput.WriteLine(inputString);
+        //streamWriter.WriteLine(inputString);
+        var prediction = compiler.StandardOutput.ReadLine();
+        ButtonPress buttonPress;
+        if (!Enum.TryParse(prediction, out buttonPress))
+        {
+            buttonPress = ButtonPress.None;
+        }
+
+        return buttonPress;
     }
 }
