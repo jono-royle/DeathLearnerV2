@@ -69,3 +69,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/DeathLearnV2ML.ConsoleApp/obj/Release/netcoreapp3.1/DeathLearnV2ML.ConsoleApp.csprojAssemblyReference.cache
+/DeathLearnV2ML.Model/obj/Release/netstandard2.0/DeathLearnV2ML.Model.csproj.FileListAbsolute.txt
+/DeathLearnV2ML.Model/obj/Release/netstandard2.0/DeathLearnV2ML.Model.csprojAssemblyReference.cache
