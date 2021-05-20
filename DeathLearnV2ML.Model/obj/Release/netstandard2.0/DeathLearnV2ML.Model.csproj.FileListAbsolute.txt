@@ -7,3 +7,13 @@ C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netst
 C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.csproj.CoreCompileInputs.cache
 C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.dll
 C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.pdb
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\bin\Release\netstandard2.0\MLModel.zip
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\bin\Release\netstandard2.0\DeathLearnV2ML.Model.deps.json
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\bin\Release\netstandard2.0\DeathLearnV2ML.Model.dll
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\bin\Release\netstandard2.0\DeathLearnV2ML.Model.pdb
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.csprojAssemblyReference.cache
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.AssemblyInfoInputs.cache
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.AssemblyInfo.cs
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.csproj.CoreCompileInputs.cache
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.dll
+C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.Model\obj\Release\netstandard2.0\DeathLearnV2ML.Model.pdb

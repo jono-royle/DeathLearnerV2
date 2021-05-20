@@ -10,7 +10,7 @@ namespace Assets.Scripts.Static
 {
     public static class MLEngineStarter
     {
-        private static string MLConsoleAppFileName = @"C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\bin\Release\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.exe";
+        private static string MLConsoleAppFileName = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnV2ML.ConsoleApp\bin\Release\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.exe";
 
         public static Process StartMachineLearningEngine()
         {
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Static
 
         public static void DeleteEngineFile()
         {
-            File.Delete(@"C:\Users\monoj\UnityProjects\DeathLearnV2\MLModel.zip");
+            File.Delete(@"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\MLModel.zip");
         }
     }
 }

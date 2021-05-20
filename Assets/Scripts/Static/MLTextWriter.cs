@@ -10,7 +10,7 @@ namespace Assets.Scripts.Static
 {
     public static class MLTextWriter
     {
-        private static string FilePath = @"C:\Users\monoj\UnityProjects\DeathLearnV2\DeathLearnTest1.txt";
+        private static string FilePath = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnTest1.txt";
 
         public static async Task WriteTxtAsync(List<PlayerAction> playerActions)
         {
