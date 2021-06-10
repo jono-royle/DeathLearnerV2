@@ -10,9 +10,11 @@ namespace Assets.Scripts.Static
 {
     public static class MLTextWriter
     {
+        private static string FilePath = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnTest1.txt";
+
         public static async Task WriteTxtAsync(List<PlayerAction> playerActions)
         {
-            using (StreamWriter writer = new StreamWriter($"C:\\Users\\monoj\\UnityProjects\\MLTest\\DeathLearnTest1.txt", true))
+            using (StreamWriter writer = new StreamWriter(FilePath, true))
             {
                 foreach (var playerAction in playerActions)
                 {
@@ -24,6 +26,11 @@ namespace Assets.Scripts.Static
                     await writer.WriteLineAsync(actionLine);
                 }
             }
+        }
+
+        public static void DeleteTxtFile()
+        {
+            File.Delete(FilePath);
         }
     }
 }

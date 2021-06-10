@@ -106,6 +106,13 @@ public class RoboSwordBoy : Enemy
         base.Update();
     }
 
+    private void OnApplicationQuit()
+    {
+        MLTextWriter.DeleteTxtFile();
+        MLEngineStarter.DeleteEngineFile();
+        compiler.CloseMainWindow();
+    }
+
     private ButtonPress GetButtonPressFromMLEngine()
     {
         var inputString = $"{transform.position.x} {transform.position.y} {Player.position.x} {Player.position.y} {Player.velocity.x} {Player.velocity.y}";

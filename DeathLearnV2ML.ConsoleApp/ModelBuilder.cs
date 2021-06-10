@@ -7,13 +7,15 @@ using System.Linq;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using DeathLearnV2ML.Model;
+using Microsoft.ML.AutoML;
 
 namespace DeathLearnV2ML.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = @"C:\Users\monoj\UnityProjects\MLTest\v3DeathLearnTest1.txt";
-        private static string MODEL_FILEPATH = @"C:\Users\monoj\AppData\Local\Temp\MLVSTools\DeathLearnV2ML\DeathLearnV2ML.Model\MLModel.zip";
+        private static string TRAIN_DATA_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnTest1.txt";
+        //private static string MODEL_FILEPATH = @"C:\Users\monoj\AppData\Local\Temp\MLVSTools\DeathLearnV2ML\DeathLearnV2ML.Model\MLModel.zip";
+        private static string MODEL_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\MLModel.zip";
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.
         private static MLContext mlContext = new MLContext(seed: 1);
@@ -29,16 +31,28 @@ namespace DeathLearnV2ML.ConsoleApp
                                             allowSparse: false);
 
             // Build training pipeline
-            IEstimator<ITransformer> trainingPipeline = BuildTrainingPipeline(mlContext);
+            //IEstimator<ITransformer> trainingPipeline = BuildTrainingPipeline(mlContext);
 
-            // Train Model
-            ITransformer mlModel = TrainModel(mlContext, trainingDataView, trainingPipeline);
+            //// Train Model
+            //ITransformer mlModel = TrainModel(mlContext, trainingDataView, trainingPipeline);
 
-            // Evaluate quality of Model
-            Evaluate(mlContext, trainingDataView, trainingPipeline);
+            //// Evaluate quality of Model
+            //Evaluate(mlContext, trainingDataView, trainingPipeline);
+
+            var experimentSettings = new MulticlassExperimentSettings();
+            experimentSettings.MaxExperimentTimeInSeconds = 100;
+            experimentSettings.CacheDirectory = null;
+            experimentSettings.Trainers.Clear();
+            experimentSettings.Trainers.Add(MulticlassClassificationTrainer.LightGbm);
+
+            var experiment = mlContext.Auto().CreateMulticlassClassificationExperiment(experimentSettings);
+            var experimentResult = experiment.Execute(trainingDataView, "col0");
+            var bestRun = experimentResult.BestRun;
+            ITransformer trainedModel = bestRun.Model;
+
 
             // Save model
-            SaveModel(mlContext, mlModel, MODEL_FILEPATH, trainingDataView.Schema);
+            SaveModel(mlContext, trainedModel, MODEL_FILEPATH, trainingDataView.Schema);
         }
 
         public static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext)

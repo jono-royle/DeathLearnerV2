@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {}
+    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
+    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+        "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
         "projectName": "DeathLearnV2ML.Model",
-        "projectPath": "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+        "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
         "packagesPath": "C:\\Users\\monoj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monoj\\UnityProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\obj\\",
+        "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
