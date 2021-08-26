@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "staT46VVtU5t/jDDMeSVtS/wuQ9nPH02SHBAk97u6lB+E8sau0pbuXf4pz/gvL2HliBhOKa7e07hmqxJtzKItA==",
+  "dgSpecHash": "/vKps8L0CT6Gg68sTx7FV5ulFKveprx8PqacsG7DImULSugzCjrMGOPYbQ/IYZV9E+RO1QeU3kzlcXzOUMVEDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+  "projectFilePath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\monoj\\.nuget\\packages\\lightgbm\\2.2.3\\lightgbm.2.2.3.nupkg.sha512",
     "C:\\Users\\monoj\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

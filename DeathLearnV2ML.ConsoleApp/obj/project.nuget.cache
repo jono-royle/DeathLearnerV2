@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yE2My0CilMoOK6aJ8kzltBjdMA7KAJydSfZ06jI8Wth3Z1yNtPj+ZctPCX7n8KnxMQyjt3xdIHjziGgiCiATdg==",
+  "dgSpecHash": "4cTGsDaqfcQAamYFedeEsCHp4W73CM0hLxBhCBOlCZ+35NOYOgjYCYAzZC0ltIUv9muPplFsU9R7BXxrkqBQkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
+  "projectFilePath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\monoj\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\monoj\\.nuget\\packages\\lightgbm\\2.2.3\\lightgbm.2.2.3.nupkg.sha512",

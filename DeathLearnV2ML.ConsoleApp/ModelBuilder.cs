@@ -13,9 +13,9 @@ namespace DeathLearnV2ML.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\DeathLearnTest1.txt";
+        private static string TRAIN_DATA_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\DeathLearnTest1.txt";
         //private static string MODEL_FILEPATH = @"C:\Users\monoj\AppData\Local\Temp\MLVSTools\DeathLearnV2ML\DeathLearnV2ML.Model\MLModel.zip";
-        private static string MODEL_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\MLModel.zip";
+        private static string MODEL_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\MLModel.zip";
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.
         private static MLContext mlContext = new MLContext(seed: 1);

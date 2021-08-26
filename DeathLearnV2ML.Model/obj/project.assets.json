@@ -3730,11 +3730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+      "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
       "projectName": "DeathLearnV2ML.Model",
-      "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+      "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
       "packagesPath": "C:\\Users\\monoj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\obj\\",
+      "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
