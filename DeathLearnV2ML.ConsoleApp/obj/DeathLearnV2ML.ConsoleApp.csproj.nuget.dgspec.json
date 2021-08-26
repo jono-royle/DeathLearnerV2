@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj": {}
+    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj": {
+    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
         "projectName": "DeathLearnV2ML.ConsoleApp",
-        "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
+        "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\DeathLearnV2ML.ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\monoj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.ConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
-                "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj"
+              "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
+                "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
+    "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+        "projectUniqueName": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
         "projectName": "DeathLearnV2ML.Model",
-        "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
+        "projectPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\DeathLearnV2ML.Model.csproj",
         "packagesPath": "C:\\Users\\monoj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnV2\\DeathLearnV2ML.Model\\obj\\",
+        "outputPath": "C:\\Users\\monoj\\ProgrammingProjects\\DeathLearnerV2\\DeathLearnV2ML.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

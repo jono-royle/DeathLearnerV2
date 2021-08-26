@@ -57,7 +57,7 @@ namespace DeathLearnV2ML.ConsoleApp
             MLContext mlContext = new MLContext();
 
             // Load model & create prediction engine
-            string modelPath = @"C:\Users\monoj\ProgrammingProjects\DeathLearnV2\MLModel.zip";
+            string modelPath = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\MLModel.zip";
             ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
