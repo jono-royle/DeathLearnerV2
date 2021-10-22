@@ -13,7 +13,10 @@ public class CutsceneController : MonoBehaviour
     [DllImport("user32.dll")] static extern uint GetActiveWindow();
     [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr hWnd);
 
+    public GameObject CutsceneCanvas;
+
     private bool engineCompleted;
+    private bool dialogueCompleted;
 
     private IntPtr unityPtr;
 
@@ -26,6 +29,7 @@ public class CutsceneController : MonoBehaviour
     async void Start()
     {
         engineCompleted = false;
+        dialogueCompleted = false;
 
         var task = BuildEngine();
         Thread.Sleep(200);
@@ -40,7 +44,7 @@ public class CutsceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (engineCompleted)
+        if (engineCompleted && dialogueCompleted)
         {
             var sceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(sceneIndex + 1);
@@ -69,5 +73,11 @@ public class CutsceneController : MonoBehaviour
         }
 
         return process.HasExited ? Task.CompletedTask : tcs.Task;
+    }
+
+    public void CutsceneDialogueFinished()
+    {
+        dialogueCompleted = true;
+        Destroy(CutsceneCanvas);
     }
 }
