@@ -161,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.6809998, y: 20.160995}
+  m_SizeDelta: {x: -50.282, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114662242
 MonoBehaviour:
@@ -443,7 +443,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 457.947, y: 89.486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544520647
 MonoBehaviour:
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Testing 123
 --- !u!222 &544520648
@@ -614,7 +614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Continue
 --- !u!222 &1369389271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -726,7 +726,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1421900405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1598969444}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: OnDialogueClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1421900405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +902,81 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 8472050523331875872, guid: 5d3b0eefdd88c9f4dbbf70549fc57f09, type: 3}
   m_PrefabInstance: {fileID: 1478952708}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1598969443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598969445}
+  - component: {fileID: 1598969444}
+  m_Layer: 0
+  m_Name: DialogueController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1598969444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598969443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200c86ce7eb192841957d5abd55b7327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueSentence: {fileID: 544520647}
+  DialogueFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848387109}
+        m_TargetAssemblyTypeName: CutsceneController, Assembly-CSharp
+        m_MethodName: CutsceneDialogueFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Sentences:
+  - You may have defeated my goblin minions
+  - But my cyborg brain can absorb their ghostly memories
+  - Your victories are now just training for my machine intelligence!
+  - Watch as I absorb the spirits and copy your murderous fighting style
+--- !u!4 &1598969445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598969443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.4080815, y: -0.7444653, z: -3.4047143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848387109 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5720748119174361575, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
+  m_PrefabInstance: {fileID: 9122617914890625688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c558270dac615c5458eb71a234312c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9122617914890625688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,6 +984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5720748119174361575, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
+      propertyPath: DialogueText
+      value: 
+      objectReference: {fileID: 544520647}
     - target: {fileID: 9122617914081858981, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
       propertyPath: m_Name
       value: CutsceneController
