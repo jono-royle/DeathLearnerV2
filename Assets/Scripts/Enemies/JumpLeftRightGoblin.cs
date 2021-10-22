@@ -7,47 +7,30 @@ using UnityEngine.Events;
 
 public class JumpLeftRightGoblin : Enemy
 {
-    public float SmallJumpLength = 1;
-
-    private bool leftFacing = false;
     private float jumpCount = 0;
-    //private bool firstCollision = true;
-    //private float jumpTimer = 0;
 
     // Update is called once per frame
     protected override void Update()
     {
-        //jumpTimer -= Time.deltaTime;
-
         if (isGrounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Jump);
-            isGrounded = false;
+            EnemyJump();
 
-            if (leftFacing)
-            {
-                moveVelocity = Speed;
-            }
-            else
+            if (direction == Vector2.left)
             {
                 moveVelocity = -Speed;
             }
+            else
+            {
+                moveVelocity = Speed;
+            }
         }
-        //if(jumpCount == 1 && jumpTimer <= 0)
-        //{
-        //    GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-        //}
 
         base.Update();
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (firstCollision)
-        //{
-        //    firstCollision = false;
-        //    return;
-        //}
         if (collision.gameObject.tag == "Scenery")
         {
             jumpCount++;
