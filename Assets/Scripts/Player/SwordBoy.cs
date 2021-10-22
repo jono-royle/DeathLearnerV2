@@ -15,7 +15,7 @@ public class SwordBoy : MonoBehaviour
     public int PlayerHealth = 3;
     public bool ChangeInitialDirection = false;
 
-    private bool isGrounded = true;
+    private bool isGrounded = false;
     private Vector2 direction = Vector2.right;
     private float arrowTimer = 0;
     private bool hitLeft = false;
@@ -51,7 +51,6 @@ public class SwordBoy : MonoBehaviour
             if (isGrounded)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Jump);
-                isGrounded = false;
             }
         }
 
@@ -181,6 +180,14 @@ public class SwordBoy : MonoBehaviour
         else if (collision.gameObject.tag == "Scenery")
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Scenery")
+        {
+            isGrounded = false;
         }
     }
 }

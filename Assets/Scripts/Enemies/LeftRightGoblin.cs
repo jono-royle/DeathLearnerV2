@@ -12,7 +12,6 @@ public class LeftRightGoblin : Enemy
     // Update is called once per frame
     protected override void Update()
     {
-
         //Left Right Movement
         if (direction == Vector2.left)
         {

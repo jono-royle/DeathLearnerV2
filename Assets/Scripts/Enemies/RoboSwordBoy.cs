@@ -31,7 +31,7 @@ public class RoboSwordBoy : Enemy
         compiler = MLEngineStarter.StartMachineLearningEngine();
         //This is an ugly hack - run the ML console app as a new process and then change focus back to unity. Would be better to run the
         //ML in the unity program but can't get the ML packages to load in unity
-        Thread.Sleep(200);
+        Thread.Sleep(500);
         SetForegroundWindow(unityPtr);
         base.Start();
     }

@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class JumpLeftRightGoblin : Enemy
 {
     private float jumpCount = 0;
+    private bool firstCollision = true;
 
     // Update is called once per frame
     protected override void Update()
@@ -31,7 +32,11 @@ public class JumpLeftRightGoblin : Enemy
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Scenery")
+        if (firstCollision)
+        {
+            firstCollision = false;
+        }
+        else if (collision.gameObject.tag == "Scenery")
         {
             jumpCount++;
             if(jumpCount >= 2)
