@@ -30,7 +30,7 @@ namespace Assets.Scripts.Enemies
         protected bool hitRight = false;
         protected float hitTimer = 0;
         protected float moveVelocity = 0;
-        protected bool isGrounded = true;
+        protected bool isGrounded = false;
         protected bool swordExists = false;
         protected bool plunging = false;
 
@@ -71,24 +71,29 @@ namespace Assets.Scripts.Enemies
             {
                 Health = Health - 2;
                 HealthCheck();
-                if(Player.transform.position.y > transform.position.y)
+                if (Player.transform.position.x > transform.position.x)
                 {
-                    if (Player.transform.position.x > transform.position.x)
-                    {
-                        hitLeft = true;
-                        hitTimer = HitTime;
-                    }
-                    else
-                    {
-                        hitRight = true;
-                        hitTimer = HitTime;
-                    }
+                    hitLeft = true;
+                    hitTimer = HitTime;
+                }
+                else
+                {
+                    hitRight = true;
+                    hitTimer = HitTime;
                 }
             }
 
             if (collision.gameObject.tag == "Scenery")
             {
                 isGrounded = true;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Scenery")
+            {
+                isGrounded = false;
             }
         }
 
@@ -109,7 +114,6 @@ namespace Assets.Scripts.Enemies
             if (isGrounded)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Jump);
-                isGrounded = false;
             }
         }
 

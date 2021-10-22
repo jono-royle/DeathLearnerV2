@@ -26,6 +26,7 @@ public class DialogueController : MonoBehaviour
         if(sentenceQueue.Count < 1)
         {
             DialogueFinished.Invoke();
+            return;
         }
         DialogueSentence.text = sentenceQueue.Dequeue();
     }

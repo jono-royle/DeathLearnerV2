@@ -988,6 +988,10 @@ PrefabInstance:
       propertyPath: DialogueText
       value: 
       objectReference: {fileID: 544520647}
+    - target: {fileID: 5720748119174361575, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
+      propertyPath: CutsceneCanvas
+      value: 
+      objectReference: {fileID: 262755144}
     - target: {fileID: 9122617914081858981, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
       propertyPath: m_Name
       value: CutsceneController
