@@ -13,7 +13,7 @@ public class LeftRightGoblin : Enemy
     protected override void Update()
     {
         //Left Right Movement
-        if (direction == Vector2.left)
+        if (Direction == Vector2.left)
         {
             moveVelocity = -Speed;
         }
@@ -32,7 +32,7 @@ public class LeftRightGoblin : Enemy
             firstCollision = false;
             return;
         }
-        direction = CharacterActions.ChangeDirection(direction != Vector2.left, spriteRenderer, direction);
+        Direction = CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
         base.OnCollisionEnter2D(collision);
     }
 }

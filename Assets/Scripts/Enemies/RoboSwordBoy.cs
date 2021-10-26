@@ -27,7 +27,7 @@ public class RoboSwordBoy : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
-        direction = Vector2.right;
+        Direction = Vector2.right;
         compiler = MLEngineStarter.StartMachineLearningEngine();
         //This is an ugly hack - run the ML console app as a new process and then change focus back to unity. Would be better to run the
         //ML in the unity program but can't get the ML packages to load in unity
@@ -59,12 +59,12 @@ public class RoboSwordBoy : Enemy
         if (buttonPress == ButtonPress.Left)
         {
             moveVelocity = -Speed;
-            direction = CharacterActions.ChangeDirection(true, spriteRenderer, direction);
+            Direction = CharacterActions.ChangeDirection(true, spriteRenderer, Direction);
         }
         if (buttonPress == ButtonPress.Right)
         {
             moveVelocity = Speed;
-            direction = CharacterActions.ChangeDirection(false, spriteRenderer, direction);
+            Direction = CharacterActions.ChangeDirection(false, spriteRenderer, Direction);
         }
         if (hitLeft)
         {
