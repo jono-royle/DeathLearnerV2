@@ -12,13 +12,13 @@ public class ArrowGoblin : Enemy
     protected override void Update()
     {
         moveVelocity = 0;
-        if(Player.transform.position.x > transform.position.x && direction == Vector2.left)
+        if(Player.transform.position.x > transform.position.x && Direction == Vector2.left)
         {
-            direction = CharacterActions.ChangeDirection(direction != Vector2.left, spriteRenderer, direction);
+            Direction = CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
         }
-        if (Player.transform.position.x < transform.position.x && direction == Vector2.right)
+        if (Player.transform.position.x < transform.position.x && Direction == Vector2.right)
         {
-            direction = CharacterActions.ChangeDirection(direction != Vector2.left, spriteRenderer, direction);
+            Direction = CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
         }
 
         if(!hitLeft && !hitRight)

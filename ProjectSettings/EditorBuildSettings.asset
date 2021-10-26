@@ -24,12 +24,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_6.unity
     guid: 907feba7e1591844883eacacaa582866
   - enabled: 1
+    path: Assets/Scenes/Level_1Mirror.unity
+    guid: 51be01a2ab2300945b27329b9f7b7679
+  - enabled: 1
+    path: Assets/Scenes/Level_2Mirror.unity
+    guid: d9c2da0be32ba944e942f4bc844864ae
+  - enabled: 1
+    path: Assets/Scenes/Level_3Mirror.unity
+    guid: 5328ba244469ee14f897cde962d1414e
+  - enabled: 1
+    path: Assets/Scenes/Level_4Mirror.unity
+    guid: f4ae487e1b9e88b4aaf0533a51c8bf2a
+  - enabled: 1
+    path: Assets/Scenes/Level_5Mirror.unity
+    guid: 6770528d0fb87f84c84ded4d658caf84
+  - enabled: 1
+    path: Assets/Scenes/Level_6Mirror.unity
+    guid: e22e90a9cccc126409d2b3362311edcc
+  - enabled: 1
     path: Assets/Scenes/Boss_Cutscene.unity
     guid: f249215c8f3bcbb40b0faad1cd07c901
   - enabled: 1
     path: Assets/Scenes/Level_Boss.unity
     guid: d496e4ef6e99fdb41b88bd78aedb7f5c
   - enabled: 0
-    path: Assets/Scenes/Level_7.unity
-    guid: 74debb654f87ff6429dd0219272acf75
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

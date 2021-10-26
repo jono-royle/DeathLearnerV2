@@ -22,9 +22,9 @@ namespace Assets.Scripts.Enemies
         public Sword Sword;
         public float HitTime = 0.3f;
         public float PlungeSpeed = -7f;
+        public Vector2 Direction = Vector2.left;
 
         protected SpriteRenderer spriteRenderer;
-        protected Vector2 direction = Vector2.left;
         protected float arrowTimer = 0;
         protected bool hitLeft = false;
         protected bool hitRight = false;
@@ -37,6 +37,10 @@ namespace Assets.Scripts.Enemies
         protected virtual void Start()
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            if(Direction.x > 0)
+            {
+                CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
+            }
         }
 
         protected virtual void Update()
@@ -103,7 +107,7 @@ namespace Assets.Scripts.Enemies
             {
                 var position = transform.position;
                 Rigidbody2D arrow = Instantiate(Arrow, position, transform.rotation);
-                CharacterActions.FireArrow(direction, arrow, ArrowSpeed);
+                CharacterActions.FireArrow(Direction, arrow, ArrowSpeed);
 
                 arrowTimer = ArrowCooldown;
             }
@@ -120,9 +124,9 @@ namespace Assets.Scripts.Enemies
         protected void SwingEnemySword()
         {
             var position = transform.position;
-            position.x += direction.x;
+            position.x += Direction.x;
             Sword sword = Instantiate(Sword, position, transform.rotation);
-            CharacterActions.SwingSword(direction, sword, gameObject.transform, swordDestroyed);
+            CharacterActions.SwingSword(Direction, sword, gameObject.transform, swordDestroyed);
             swordExists = true;
         }
 

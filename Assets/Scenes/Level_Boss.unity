@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1578232776}
+    - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
+      propertyPath: StartingDirection.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4384752452804945475, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: m_Name
       value: RoboSwordBoy_0

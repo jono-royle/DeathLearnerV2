@@ -17,7 +17,7 @@ public class JumpLeftRightGoblin : Enemy
         {
             EnemyJump();
 
-            if (direction == Vector2.left)
+            if (Direction == Vector2.left)
             {
                 moveVelocity = -Speed;
             }
@@ -41,7 +41,7 @@ public class JumpLeftRightGoblin : Enemy
             jumpCount++;
             if(jumpCount >= 2)
             {
-                direction = CharacterActions.ChangeDirection(direction != Vector2.left, spriteRenderer, direction);
+                Direction = CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
                 jumpCount = 0;
             }
         }
