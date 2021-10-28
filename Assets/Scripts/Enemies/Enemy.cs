@@ -101,7 +101,7 @@ namespace Assets.Scripts.Enemies
             }
         }
 
-        protected void FireEnemyArrow()
+        protected bool FireEnemyArrow()
         {
             if (!hitLeft && !hitRight && arrowTimer <= 0)
             {
@@ -110,7 +110,9 @@ namespace Assets.Scripts.Enemies
                 CharacterActions.FireArrow(Direction, arrow, ArrowSpeed);
 
                 arrowTimer = ArrowCooldown;
+                return true;
             }
+            return false;
         }
 
         protected void EnemyJump()
