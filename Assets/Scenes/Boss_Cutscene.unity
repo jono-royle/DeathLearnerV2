@@ -985,6 +985,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5720748119174361575, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
+      propertyPath: Ghost
+      value: 
+      objectReference: {fileID: 4205984158138061893, guid: 4fb876161e018d04d9b3beac5a944eb0, type: 3}
+    - target: {fileID: 5720748119174361575, guid: 56894a18c727f314a81e8cfb4e54241d, type: 3}
       propertyPath: DialogueText
       value: 
       objectReference: {fileID: 544520647}

@@ -14,9 +14,12 @@ public class CutsceneController : MonoBehaviour
     [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr hWnd);
 
     public GameObject CutsceneCanvas;
+    public Ghost Ghost;
+    public float GhostSpawnRate = 1f;
 
     private bool engineCompleted;
     private bool dialogueCompleted;
+    private float ghostTimer = 0;
 
     private IntPtr unityPtr;
 
@@ -44,17 +47,20 @@ public class CutsceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueCompleted)
+        {
+            ghostTimer += Time.deltaTime;
+            if (ghostTimer >= GhostSpawnRate)
+            {
+                CreateGhost();
+            }
+        }
+
         if (engineCompleted && dialogueCompleted)
         {
             var sceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(sceneIndex + 1);
         }
-    }
-
-    private async Task BuildEngine()
-    {
-        var process = MLEngineStarter.BuildMachineLearningEngine();
-        await WaitForExitAsync(process);
     }
 
     public static Task WaitForExitAsync(System.Diagnostics.Process process, CancellationToken cancellationToken = default(CancellationToken))
@@ -79,5 +85,20 @@ public class CutsceneController : MonoBehaviour
     {
         dialogueCompleted = true;
         Destroy(CutsceneCanvas);
+    }
+
+    private async Task BuildEngine()
+    {
+        var process = MLEngineStarter.BuildMachineLearningEngine();
+        await WaitForExitAsync(process);
+    }
+
+    private void CreateGhost()
+    {
+        Ghost ghost = Instantiate(Ghost, new Vector2(UnityEngine.Random.Range(-16.7f, -10f), 7), transform.rotation);
+        ghost.RightWayUp = false;
+        ghost.GhostSpeed = UnityEngine.Random.Range(0.5f, 1f);
+        ghost.EndPosition = new Vector2(-14.8f, -2.83f);
+        ghostTimer = 0;
     }
 }

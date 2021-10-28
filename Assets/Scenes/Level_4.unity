@@ -323,8 +323,12 @@ MonoBehaviour:
         m_CallState: 2
   Arrow: {fileID: 0}
   Player: {fileID: 875944235}
+  Sword: {fileID: 0}
   HitTime: 0.3
-  SmallJumpLength: 1
+  PlungeSpeed: -7
+  Direction: {x: -1, y: 0}
+  Ghost: {fileID: 4205984158138061893, guid: 4fb876161e018d04d9b3beac5a944eb0, type: 3}
+  GoblinHead: {fileID: 1366785528536838395, guid: c2c2c98cf43c2934491d6b9eaf36448c, type: 3}
 --- !u!1001 &1984868291
 PrefabInstance:
   m_ObjectHideFlags: 0

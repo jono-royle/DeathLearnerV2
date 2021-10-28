@@ -46,6 +46,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -139,6 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
+  Speed: 5
+  Jump: 7
+  ArrowSpeed: 35
+  ArrowCooldown: 1.5
   EnemyDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -154,7 +159,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Speed: 5
+  Arrow: {fileID: 0}
+  Player: {fileID: 0}
+  Sword: {fileID: 0}
+  HitTime: 0.3
+  PlungeSpeed: -7
+  Direction: {x: -1, y: 0}
+  Ghost: {fileID: 4205984158138061893, guid: 4fb876161e018d04d9b3beac5a944eb0, type: 3}
 --- !u!61 &7413983992548163983
 BoxCollider2D:
   m_ObjectHideFlags: 0
