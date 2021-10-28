@@ -33,6 +33,7 @@ public class RoboSwordBoy : Enemy
         //ML in the unity program but can't get the ML packages to load in unity
         Thread.Sleep(500);
         SetForegroundWindow(unityPtr);
+        isBoss = true;
         base.Start();
     }
 

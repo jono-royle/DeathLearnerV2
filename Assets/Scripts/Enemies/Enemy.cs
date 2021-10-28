@@ -23,6 +23,8 @@ namespace Assets.Scripts.Enemies
         public float HitTime = 0.3f;
         public float PlungeSpeed = -7f;
         public Vector2 Direction = Vector2.left;
+        public Ghost Ghost;
+        public GoblinHead GoblinHead;
 
         protected SpriteRenderer spriteRenderer;
         protected float arrowTimer = 0;
@@ -33,6 +35,7 @@ namespace Assets.Scripts.Enemies
         protected bool isGrounded = false;
         protected bool swordExists = false;
         protected bool plunging = false;
+        protected bool isBoss = false;
 
         protected virtual void Start()
         {
@@ -93,14 +96,6 @@ namespace Assets.Scripts.Enemies
             }
         }
 
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.tag == "Scenery")
-            {
-                isGrounded = false;
-            }
-        }
-
         protected bool FireEnemyArrow()
         {
             if (!hitLeft && !hitRight && arrowTimer <= 0)
@@ -148,12 +143,32 @@ namespace Assets.Scripts.Enemies
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, PlungeSpeed);
         }
 
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Scenery")
+            {
+                isGrounded = false;
+            }
+        }
+
         private void HealthCheck()
         {
+
             if (Health <= 0)
             {
                 EnemyDeathEvent.Invoke();
+                CreateDeathEffects();
                 Destroy(gameObject);
+            }
+        }
+
+        private void CreateDeathEffects()
+        {
+            Ghost ghost = Instantiate(Ghost, transform.position, transform.rotation);
+            ghost.EndPosition = new Vector2(transform.position.x, transform.position.y + 15);
+            if (!isBoss)
+            {
+                Instantiate(GoblinHead, transform.position, transform.rotation);
             }
         }
 

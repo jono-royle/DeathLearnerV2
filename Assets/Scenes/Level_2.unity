@@ -400,7 +400,12 @@ MonoBehaviour:
         m_CallState: 2
   Arrow: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
   Player: {fileID: 1800866403}
+  Sword: {fileID: 0}
   HitTime: 0.3
+  PlungeSpeed: -7
+  Direction: {x: -1, y: 0}
+  Ghost: {fileID: 4205984158138061893, guid: 4fb876161e018d04d9b3beac5a944eb0, type: 3}
+  GoblinHead: {fileID: 1366785528536838395, guid: c2c2c98cf43c2934491d6b9eaf36448c, type: 3}
 --- !u!50 &736331606 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7413983992548163982, guid: 2e41b785f7638fe419292081f2311470, type: 3}
