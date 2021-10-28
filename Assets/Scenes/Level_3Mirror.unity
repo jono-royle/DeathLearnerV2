@@ -211,7 +211,7 @@ MonoBehaviour:
   Speed: 5
   Jump: 7
   ArrowSpeed: 35
-  ArrowCooldown: 1.5
+  ArrowCooldown: 2
   EnemyDeathEvent:
     m_PersistentCalls:
       m_Calls:

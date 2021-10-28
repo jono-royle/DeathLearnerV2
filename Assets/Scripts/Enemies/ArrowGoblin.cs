@@ -23,7 +23,17 @@ public class ArrowGoblin : Enemy
 
         if(!hitLeft && !hitRight)
         {
-            FireEnemyArrow();
+            if (!FireEnemyArrow())
+            {
+                if (Direction == Vector2.left)
+                {
+                    moveVelocity = -Speed / 2;
+                }
+                else
+                {
+                    moveVelocity = Speed / 2;
+                }
+            }
         }
         base.Update();
     }

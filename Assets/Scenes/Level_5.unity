@@ -221,7 +221,7 @@ MonoBehaviour:
   Speed: 5
   Jump: 7
   ArrowSpeed: 35
-  ArrowCooldown: 1.5
+  ArrowCooldown: 2
   EnemyDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -251,7 +251,10 @@ MonoBehaviour:
         m_CallState: 2
   Arrow: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
   Player: {fileID: 107648895}
+  Sword: {fileID: 0}
   HitTime: 0.3
+  PlungeSpeed: -7
+  Direction: {x: -1, y: 0}
 --- !u!1001 &1287147790
 PrefabInstance:
   m_ObjectHideFlags: 0
