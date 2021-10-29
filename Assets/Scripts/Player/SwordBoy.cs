@@ -1,5 +1,6 @@
 using Assets.Scripts.Static;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SwordBoy : MonoBehaviour
@@ -12,8 +13,9 @@ public class SwordBoy : MonoBehaviour
     public float ArrowSpeed = 35;
     public float ArrowCooldown = 1.5f;
     public float HitTime = 0.3f;
-    public int PlayerHealth = 3;
+    public int PlayerHealth = 8;
     public Vector2 Direction = Vector2.right;
+    public UnityEvent<int> PlayerHitEvent;
 
     private bool isGrounded = false;
     private float arrowTimer = 0;
@@ -158,10 +160,22 @@ public class SwordBoy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && collision.otherCollider.gameObject.name != "Sword(Clone)")
         {
-            PlayerHealth--;
+            if(collision.collider.gameObject.name == "RedArrow(Clone)")
+            {
+                PlayerHealth--;
+            }
+            else
+            {
+                PlayerHealth = PlayerHealth - 2;
+            }
+
             if (PlayerHealth <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                PlayerHitEvent.Invoke(PlayerHealth);
             }
 
             var enemyX = collision.gameObject.transform.position.x;

@@ -8,26 +8,56 @@ public class DialogueController : MonoBehaviour
 {
     public Text DialogueSentence;
     public UnityEvent DialogueFinished;
+    public Button contineButton;
 
     [TextArea(2, 10)]
     public string[] Sentences;
 
     private Queue<string> sentenceQueue;
+    private bool acceptInput = false;
 
     // Start is called before the first frame update
     void Start()
     {
         sentenceQueue = new Queue<string>(Sentences);
         DialogueSentence.text = sentenceQueue.Dequeue();
+        StartCoroutine(RevealText());
     }
 
     public void OnDialogueClick()
     {
-        if(sentenceQueue.Count < 1)
+        if (acceptInput)
         {
-            DialogueFinished.Invoke();
-            return;
+            if (sentenceQueue.Count < 1)
+            {
+                DialogueFinished.Invoke();
+                return;
+            }
+            DialogueSentence.text = sentenceQueue.Dequeue();
+            StartCoroutine(RevealText());
         }
-        DialogueSentence.text = sentenceQueue.Dequeue();
+    }
+
+    private IEnumerator RevealText()
+    {
+        acceptInput = false;
+        contineButton.interactable = false;
+        var originalString = DialogueSentence.text;
+        DialogueSentence.text = "";
+
+        var numCharsRevealed = 0;
+        while (numCharsRevealed < originalString.Length)
+        {
+            while (originalString[numCharsRevealed] == ' ')
+                ++numCharsRevealed;
+
+            ++numCharsRevealed;
+
+            DialogueSentence.text = originalString.Substring(0, numCharsRevealed);
+
+            yield return new WaitForSeconds(0.15f);
+        }
+        acceptInput = true;
+        contineButton.interactable = true;
     }
 }

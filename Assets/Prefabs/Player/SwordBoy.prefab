@@ -147,7 +147,11 @@ MonoBehaviour:
   ArrowSpeed: 35
   ArrowCooldown: 1.5
   HitTime: 0.3
-  PlayerHealth: 3
+  PlayerHealth: 8
+  Direction: {x: 1, y: 0}
+  PlayerHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &4014350158136067352
 BoxCollider2D:
   m_ObjectHideFlags: 0

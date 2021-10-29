@@ -8,12 +8,12 @@ public class Door : MonoBehaviour
     public Sprite UnlockedSprite;
 
     private bool locked = true;
-   
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,6 @@ public class Door : MonoBehaviour
     public void Unlock()
     {
         locked = false;
-        var spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = UnlockedSprite;
     }
 
