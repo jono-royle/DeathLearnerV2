@@ -22,7 +22,7 @@ public class Ghost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, EndPosition, 0.01f);
+        transform.position = Vector2.MoveTowards(transform.position, EndPosition, GhostSpeed);
         if(transform.position.x == EndPosition.x && transform.position.y == EndPosition.y)
         {
             Destroy(gameObject);

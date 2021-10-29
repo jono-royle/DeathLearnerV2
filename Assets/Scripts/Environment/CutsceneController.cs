@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CutsceneController : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class CutsceneController : MonoBehaviour
 
     public GameObject CutsceneCanvas;
     public Ghost Ghost;
-    public float GhostSpawnRate = 1f;
+    public float GhostSpawnRate = 0.5f;
+    public Text MlProgressText;
 
     private bool engineCompleted;
     private bool dialogueCompleted;
     private float ghostTimer = 0;
+    private float mlTimer = 0;
 
     private IntPtr unityPtr;
 
@@ -47,6 +50,9 @@ public class CutsceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mlTimer += Time.deltaTime;
+        MlProgressText.text = $"Machine learning in progress {mlTimer.ToString("0.00")}";
+
         if (dialogueCompleted)
         {
             ghostTimer += Time.deltaTime;
@@ -97,7 +103,7 @@ public class CutsceneController : MonoBehaviour
     {
         Ghost ghost = Instantiate(Ghost, new Vector2(UnityEngine.Random.Range(-16.7f, -10f), 7), transform.rotation);
         ghost.RightWayUp = false;
-        ghost.GhostSpeed = UnityEngine.Random.Range(0.5f, 1f);
+        ghost.GhostSpeed = UnityEngine.Random.Range(0.01f, 0.06f);
         ghost.EndPosition = new Vector2(-14.8f, -2.83f);
         ghostTimer = 0;
     }

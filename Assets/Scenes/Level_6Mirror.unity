@@ -138,6 +138,34 @@ PrefabInstance:
       propertyPath: StartingDirection.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 910846979}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HeartController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067354, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -335,6 +363,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c760b402e153e949b7b64296e0048d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &910846979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 118724302708372466, guid: 11813e561c616bf4c933838c41612168, type: 3}
+  m_PrefabInstance: {fileID: 910846977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d023f24d775bc4bb4b0193279b044f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1361316839
