@@ -189,4 +189,10 @@ public class SwordBoy : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        MLTextWriter.DeleteTxtFile();
+        MLEngineStarter.DeleteEngineFile();
+    }
 }

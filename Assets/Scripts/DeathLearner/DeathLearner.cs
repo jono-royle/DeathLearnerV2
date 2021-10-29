@@ -90,6 +90,13 @@ public class DeathLearner : MonoBehaviour
             //    }
             //}
             playerActions.Add(playerAction);
+            if(playerAction.ButtonPressed == ButtonPress.Sword)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    playerActions.Add(playerAction);
+                }
+            }
         }
 
     }
