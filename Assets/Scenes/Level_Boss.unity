@@ -258,6 +258,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7695253797979001098, guid: 42fb342786eab914e8fa1ee647bf4d2b, type: 3}
     - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
+      propertyPath: Ghost
+      value: 
+      objectReference: {fileID: 4205984158138061893, guid: 4fb876161e018d04d9b3beac5a944eb0, type: 3}
+    - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: Sword
       value: 
       objectReference: {fileID: 9132026779182974203, guid: d804c4ecaf739ad4589abfc374110971, type: 3}
@@ -269,6 +273,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1578232776}
+    - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
+      propertyPath: Direction.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: StartingDirection.x
       value: 1

@@ -27,7 +27,6 @@ public class RoboSwordBoy : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
-        Direction = Vector2.right;
         compiler = MLEngineStarter.StartMachineLearningEngine();
         //This is an ugly hack - run the ML console app as a new process and then change focus back to unity. Would be better to run the
         //ML in the unity program but can't get the ML packages to load in unity
@@ -35,6 +34,7 @@ public class RoboSwordBoy : Enemy
         SetForegroundWindow(unityPtr);
         isBoss = true;
         base.Start();
+        Direction = Vector2.right;
     }
 
     // Update is called once per frame
@@ -109,8 +109,6 @@ public class RoboSwordBoy : Enemy
 
     private void OnApplicationQuit()
     {
-        MLTextWriter.DeleteTxtFile();
-        MLEngineStarter.DeleteEngineFile();
         compiler.CloseMainWindow();
     }
 
