@@ -1,7 +1,8 @@
 {
   "profiles": {
     "DeathLearnV2ML.ConsoleApp": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "C:/Users/monoj/AppData/LocalLow/JRoyle/DeathLearner   Build"
     }
   }
 }

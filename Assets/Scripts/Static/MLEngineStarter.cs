@@ -5,21 +5,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.Static
 {
     public static class MLEngineStarter
     {
-        private static string MLConsoleAppFileName = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\DeathLearnV2ML.ConsoleApp\bin\Release\netcoreapp3.1\DeathLearnV2ML.ConsoleApp.exe";
+        private static string MLConsoleAppFileName = $"{Application.dataPath}/MLConsoleApp/DeathLearnV2ML.ConsoleApp.exe";
 
         public static Process StartMachineLearningEngine()
         {
+
             var compiler = new Process();
             compiler.StartInfo.FileName = MLConsoleAppFileName;
             compiler.StartInfo.UseShellExecute = false;
             compiler.StartInfo.RedirectStandardOutput = true;
             compiler.StartInfo.RedirectStandardInput = true;
             compiler.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            compiler.StartInfo.Arguments = $"{Application.persistentDataPath}   Start";
 
             compiler.Start();
             return compiler;
@@ -31,14 +34,14 @@ namespace Assets.Scripts.Static
             compiler.StartInfo.FileName = MLConsoleAppFileName;
             compiler.StartInfo.UseShellExecute = true;
             compiler.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
-            compiler.StartInfo.Arguments = "Build";
+            compiler.StartInfo.Arguments = $"{Application.persistentDataPath}   Build";
             compiler.Start();
             return compiler;
         }
 
         public static void DeleteEngineFile()
         {
-            File.Delete(@"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\MLModel.zip");
+            File.Delete(@$"{Application.persistentDataPath}\MLModel.zip");
         }
     }
 }

@@ -26,7 +26,7 @@ public class DeathLearner : MonoBehaviour
         }
 
         WaitTimer -= Time.deltaTime;
-        var playerAction = new PlayerAction();
+        var buttonsPressed = new List<ButtonPress>();
         var actionRecorded = false;
 
         //TODO: Currently just recording a single button press, can be multiple at once
@@ -34,20 +34,20 @@ public class DeathLearner : MonoBehaviour
         //Left Right Movement
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            playerAction.ButtonPressed = ButtonPress.Left;
+            buttonsPressed.Add(ButtonPress.Left);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            playerAction.ButtonPressed = ButtonPress.Right;
+            buttonsPressed.Add(ButtonPress.Right);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            playerAction.ButtonPressed = ButtonPress.Jump;
+            buttonsPressed.Add(ButtonPress.Jump);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
@@ -55,7 +55,7 @@ public class DeathLearner : MonoBehaviour
         //Fire Arrow
         if (Input.GetKey(KeyCode.F))
         {
-            playerAction.ButtonPressed = ButtonPress.Arrow;
+            buttonsPressed.Add(ButtonPress.Arrow);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
@@ -63,38 +63,36 @@ public class DeathLearner : MonoBehaviour
         //Swing Sword
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerAction.ButtonPressed = ButtonPress.Sword;
+            buttonsPressed.Add(ButtonPress.Sword);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
 
         if(WaitTimer <= 0)
         {
-            playerAction.ButtonPressed = ButtonPress.None;
+            buttonsPressed.Add(ButtonPress.None);
             WaitTimer = 0.5f;
             actionRecorded = true;
         }
 
         if (actionRecorded == true)
         {
-            playerAction.PlayerPosition= player.position;
-            playerAction.EnemyPosition = enemy.position;
-            playerAction.EnemyVelocity = enemy.velocity;
-            //Commenting out arrows as MS machine learning cant handle variable column numbers.
-            //TODO: Maybe do closest arrow?
-            //foreach(GameObject taggedEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
-            //{
-            //    if(taggedEnemy.name == "RedArrow(Clone)")
-            //    {
-            //        playerAction.ArrowPositions.Add(taggedEnemy.GetComponent<Rigidbody2D>().position);
-            //    }
-            //}
-            playerActions.Add(playerAction);
-            if(playerAction.ButtonPressed == ButtonPress.Sword)
+            foreach(var buttonPress in buttonsPressed)
             {
-                for (int i = 0; i < 5; i++)
+                var playerAction = new PlayerAction();
+                playerAction.ButtonPressed = buttonPress;
+                playerAction.PlayerPosition = player.position;
+                playerAction.EnemyPosition = enemy.position;
+                playerAction.EnemyVelocity = enemy.velocity;
+                playerAction.ClosestArrowPosition = GetClosestArrow();
+                playerActions.Add(playerAction);
+                if (playerAction.ButtonPressed == ButtonPress.Sword || playerAction.ButtonPressed == ButtonPress.Arrow)
                 {
-                    playerActions.Add(playerAction);
+                    //Record sword/arrow 5 times to add extra weight in ML
+                    for (int i = 0; i < 4; i++)
+                    {
+                        playerActions.Add(playerAction);
+                    }
                 }
             }
         }
@@ -105,5 +103,26 @@ public class DeathLearner : MonoBehaviour
     {
         deathRecorded = true;
         await MLTextWriter.WriteTxtAsync(playerActions);
+    }
+
+    private Vector2 GetClosestArrow()
+    {
+        var arrowPosition = new Vector2(100, 100);
+        float closestDistanceSqr = Mathf.Infinity;
+        foreach (GameObject taggedEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            if (taggedEnemy.name == "RedArrow(Clone)")
+            {
+                Vector3 directionToTarget = taggedEnemy.transform.position - player.transform.position;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (dSqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = dSqrToTarget;
+                    arrowPosition = new Vector2(taggedEnemy.transform.position.x, taggedEnemy.transform.position.y);
+                }
+
+            }
+        }
+        return arrowPosition;
     }
 }

@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6809998, y: 20.160995}
+  m_AnchoredPosition: {x: 1.6810303, y: 20.160995}
   m_SizeDelta: {x: -50.282, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114662242
@@ -1052,9 +1052,9 @@ MonoBehaviour:
   - You may have defeated my goblin minions
   - But my cyborg brain can absorb their ghostly memories
   - Your victories are now just training for my machine intelligence!
-  - Watch as I absorb the spirits and copy your murderous fighting style
+  - Watch as I absorb their spirits and copy your murderous fighting style
   - ...No I am not stalling for time!
-  - ...it just takes a while for my engine to get warmed up
+  - ...it just takes a little while for my engine to get warmed up
 --- !u!4 &1598969445
 Transform:
   m_ObjectHideFlags: 0
@@ -1114,8 +1114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 223.409, y: 115}
-  m_SizeDelta: {x: 230.819, y: 30}
+  m_AnchoredPosition: {x: 278.28, y: 115}
+  m_SizeDelta: {x: 340.55, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126662774
 MonoBehaviour:

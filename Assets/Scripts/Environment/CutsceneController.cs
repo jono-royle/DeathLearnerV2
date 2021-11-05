@@ -38,7 +38,7 @@ public class CutsceneController : MonoBehaviour
         dialogueCompleted = false;
 
         var task = BuildEngine();
-        Thread.Sleep(200);
+        Thread.Sleep(3000);
         SetForegroundWindow(unityPtr);
         await task;
         await task.ContinueWith(t =>
@@ -51,7 +51,7 @@ public class CutsceneController : MonoBehaviour
     void Update()
     {
         mlTimer += Time.deltaTime;
-        MlProgressText.text = $"Machine learning in progress {mlTimer.ToString("0.00")}";
+        MlProgressText.text = $"Machine learning in progress {mlTimer.ToString("0.00")} out of 100";
 
         if (dialogueCompleted)
         {

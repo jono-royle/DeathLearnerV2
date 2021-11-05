@@ -13,15 +13,17 @@ namespace DeathLearnV2ML.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\DeathLearnTest1.txt";
-        //private static string MODEL_FILEPATH = @"C:\Users\monoj\AppData\Local\Temp\MLVSTools\DeathLearnV2ML\DeathLearnV2ML.Model\MLModel.zip";
-        private static string MODEL_FILEPATH = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\MLModel.zip";
+        private static string TRAIN_DATA_FILEPATH;
+        private static string MODEL_FILEPATH;
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.
         private static MLContext mlContext = new MLContext(seed: 1);
 
-        public static void CreateModel()
+        public static void CreateModel(string folderPath)
         {
+            TRAIN_DATA_FILEPATH = @$"{folderPath}/DeathLearnInput.txt";
+            MODEL_FILEPATH = @$"{folderPath}/MLModel.zip";
+
             // Load Data
             IDataView trainingDataView = mlContext.Data.LoadFromTextFile<ModelInput>(
                                             path: TRAIN_DATA_FILEPATH,
@@ -59,7 +61,7 @@ namespace DeathLearnV2ML.ConsoleApp
         {
             // Data process configuration with pipeline data transformations 
             var dataProcessPipeline = mlContext.Transforms.Conversion.MapValueToKey("col0", "col0")
-                                      .Append(mlContext.Transforms.Concatenate("Features", new[] { "col1", "col2", "col3", "col4", "col5", "col6" }));
+                                      .Append(mlContext.Transforms.Concatenate("Features", new[] { "col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8" }));
             // Set the training algorithm 
             var trainer = mlContext.MulticlassClassification.Trainers.LightGbm(labelColumnName: "col0", featureColumnName: "Features")
                                       .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));

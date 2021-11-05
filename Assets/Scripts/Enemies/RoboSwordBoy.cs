@@ -17,11 +17,26 @@ public class RoboSwordBoy : Enemy
 
     private Process compiler;
     private IntPtr unityPtr;
+    //private static RoboSwordBoy instance;
     //private StreamWriter streamWriter;
 
     private void Awake()
     {
         unityPtr = (IntPtr)GetActiveWindow();
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //    //Sets this to not be destroyed when reloading scene
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+
+
+
+        Health = 6;
     }
 
     // Start is called before the first frame update
@@ -30,7 +45,7 @@ public class RoboSwordBoy : Enemy
         compiler = MLEngineStarter.StartMachineLearningEngine();
         //This is an ugly hack - run the ML console app as a new process and then change focus back to unity. Would be better to run the
         //ML in the unity program but can't get the ML packages to load in unity
-        Thread.Sleep(500);
+        Thread.Sleep(3000);
         SetForegroundWindow(unityPtr);
         isBoss = true;
         base.Start();
@@ -112,9 +127,15 @@ public class RoboSwordBoy : Enemy
         compiler.CloseMainWindow();
     }
 
+    private void OnDestroy()
+    {
+        compiler.CloseMainWindow();
+    }
+
     private ButtonPress GetButtonPressFromMLEngine()
     {
-        var inputString = $"{transform.position.x} {transform.position.y} {Player.position.x} {Player.position.y} {Player.velocity.x} {Player.velocity.y}";
+        var closestArrow = GetClosestArrow();
+        var inputString = $"{transform.position.x} {transform.position.y} {Player.position.x} {Player.position.y} {Player.velocity.x} {Player.velocity.y} {closestArrow.x} {closestArrow.y}";
 
         compiler.StandardInput.WriteLine(inputString);
         //streamWriter.WriteLine(inputString);
@@ -126,5 +147,26 @@ public class RoboSwordBoy : Enemy
         }
 
         return buttonPress;
+    }
+
+    private Vector2 GetClosestArrow()
+    {
+        var arrowPosition = new Vector2(100, 100);
+        float closestDistanceSqr = Mathf.Infinity;
+        foreach (GameObject taggedPlayer in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (taggedPlayer.name == "GreenArrow(Clone)")
+            {
+                Vector3 directionToTarget = taggedPlayer.transform.position - transform.position;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (dSqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = dSqrToTarget;
+                    arrowPosition = new Vector2(taggedPlayer.transform.position.x, taggedPlayer.transform.position.y);
+                }
+
+            }
+        }
+        return arrowPosition;
     }
 }

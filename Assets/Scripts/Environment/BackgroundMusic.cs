@@ -7,12 +7,10 @@ public class BackgroundMusic : MonoBehaviour
 {
     static BackgroundMusic instance;
 
-    // Drag in the .mp3 files here, in the editor
     public AudioClip[] MusicClips;
 
     public AudioSource Audio;
 
-    // Singelton to keep instance alive through all scenes
     void Awake()
     {
         if (instance == null) 
@@ -26,14 +24,11 @@ public class BackgroundMusic : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        // Hooks up the 'OnSceneLoaded' method to the sceneLoaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Called whenever a scene is loaded
     void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
-        // Replacement variable (doesn't change the original audio source)
         AudioClip sceneClip;
 
         // Plays different music in different scenes
