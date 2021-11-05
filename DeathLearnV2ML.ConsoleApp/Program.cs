@@ -9,10 +9,13 @@ namespace DeathLearnV2ML.ConsoleApp
 {
     class Program
     {
+        private static string folderPath;
+
         static void Main(string[] args)
         {
-            if (!args.Any())
+            if (args[1] == "Start")
             {
+                folderPath = args[0];
                 do
                 {
                     string input = Console.ReadLine();
@@ -26,6 +29,8 @@ namespace DeathLearnV2ML.ConsoleApp
                         EnemyY = float.Parse(inputArgs[3]),
                         EnemyVelocityX = float.Parse(inputArgs[4]),
                         EnemyVelocityY = float.Parse(inputArgs[5]),
+                        ClosestArrowX = float.Parse(inputArgs[6]),
+                        ClosestArrowY = float.Parse(inputArgs[7])
                     };
 
                     var predictionResult = Predict(modelInput);
@@ -34,10 +39,10 @@ namespace DeathLearnV2ML.ConsoleApp
 
                 } while (true);
             }
-            else
+            else if(args[1] == "Build")
             {
                 Console.WriteLine("Building Model");
-                ModelBuilder.CreateModel();
+                ModelBuilder.CreateModel(args[0]);
             }
         }
 
@@ -57,7 +62,7 @@ namespace DeathLearnV2ML.ConsoleApp
             MLContext mlContext = new MLContext();
 
             // Load model & create prediction engine
-            string modelPath = @"C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\MLModel.zip";
+            string modelPath = @$"{folderPath}\MLModel.zip"; ;
             ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 

@@ -1,0 +1,3 @@
+C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\Assets\MLConsoleApp\DeathLearnV2ML.ConsoleApp.pdb
+C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\Assets\MLConsoleApp\DeathLearnV2ML.Model.pdb
+C:\Users\monoj\ProgrammingProjects\DeathLearnerV2\Assets\MLConsoleApp\DeathLearnV2ML.ConsoleApp.exe

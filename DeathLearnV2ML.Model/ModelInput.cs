@@ -33,6 +33,12 @@ namespace DeathLearnV2ML.Model
         [ColumnName("col6"), LoadColumn(6)]
         public float EnemyVelocityY { get; set; }
 
+        [ColumnName("col7"), LoadColumn(7)]
+        public float ClosestArrowX { get; set; }
+
+        [ColumnName("col8"), LoadColumn(8)]
+        public float ClosestArrowY { get; set; }
+
 
     }
 }
