@@ -134,6 +134,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c760b402e153e949b7b64296e0048d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &858813899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8472050523331875875, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+  m_PrefabInstance: {fileID: 8472050523505060959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &858813901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858813899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c91ff469da723d4ab590b76cc6c306f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wireColor: {r: 1, g: 1, b: 1, a: 1}
+  UnitsSize: 36
+  constraint: 0
+  camera: {fileID: 858813903}
+--- !u!20 &858813903 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8472050523331875872, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+  m_PrefabInstance: {fileID: 8472050523505060959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1809379830 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4014350158136067355, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
@@ -431,6 +457,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8472050523331875872, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+      propertyPath: orthographic size
+      value: 8.586396
+      objectReference: {fileID: 0}
+    - target: {fileID: 8472050523331875872, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.8705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8472050523331875872, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.76470596
+      objectReference: {fileID: 0}
+    - target: {fileID: 8472050523331875872, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.6784314
+      objectReference: {fileID: 0}
     - target: {fileID: 8640037423927272945, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -479,7 +521,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmptyLevel1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 74175673416019611, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5337569e65a8e3458a9eab41914b47c, type: 3}
 --- !u!114 &8472050523505060960 stripped
 MonoBehaviour:
