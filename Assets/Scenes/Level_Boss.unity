@@ -373,7 +373,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 753712461
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &629263628
@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 9132026779182974203, guid: d804c4ecaf739ad4589abfc374110971, type: 3}
     - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: Health
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: Player

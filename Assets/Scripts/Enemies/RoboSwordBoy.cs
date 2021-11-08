@@ -110,7 +110,7 @@ public class RoboSwordBoy : Enemy
     //Dont want to restart the scene when the player dies as the ML engine is running
     public void HandlePlayerDeath()
     {
-        Health = 6;
+        Health = 8;
         gameObject.transform.position = new Vector2(-14.8f, -4f);
     }
 

@@ -1,4 +1,18 @@
 Readme
+This project is a very simple 2d platformer that records the players actions, then uses that data to train
+an ML.net LightGBM engine. This engine is then used to provide the AI for the final boss of the game.
+The platformer had to be kept very simple (e.g simple identical level layouts) to allow for the game state to be
+encapsulated into a simple tab delimited txt file.
+My original plan was for the machine learning to run in the background of the unity application, however I was 
+unable to get the ML dlls to build within the unity framework, so instead I had to settle for firing up the ML
+as a separate command line process from within unity
+
+TO GET IT WORKING:
+Download DeathLearnerV2 project folder
+Go to DeathLearnerV2\Assets
+Copy the folder 'MLConsoleApp'
+Paste this folder into DeathLearnerV2\CompletedGame\DeathLearner_Data
+Run DeathLearner.exe in DeathLearnerV2\CompletedGame
 
 Music credits:
 The Lift Kevin MacLeod (incompetech.com)
