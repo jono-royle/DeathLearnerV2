@@ -38,6 +38,7 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    //Reveal text one letter at a time
     private IEnumerator RevealText()
     {
         acceptInput = false;
