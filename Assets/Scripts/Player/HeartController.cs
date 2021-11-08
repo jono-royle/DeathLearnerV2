@@ -13,7 +13,7 @@ public class HeartController : MonoBehaviour
     public Sprite Hearts2;
     public Sprite Hearts1;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()

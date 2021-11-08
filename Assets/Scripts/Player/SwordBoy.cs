@@ -49,10 +49,7 @@ public class SwordBoy : MonoBehaviour
         //Jumping
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            if (isGrounded)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Jump);
-            }
+            PlayerJump();
         }
 
         float moveVelocity = 0;
@@ -105,6 +102,14 @@ public class SwordBoy : MonoBehaviour
         }
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+    }
+
+    private void PlayerJump()
+    {
+        if (isGrounded)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, Jump);
+        }
     }
 
     private void SwingPlayerSword()

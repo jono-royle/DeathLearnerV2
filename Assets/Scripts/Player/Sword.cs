@@ -20,6 +20,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //When a sword is used on the ground it has a life timer, in mid air it exists until it hits the ground
         if (!Midair)
         {
             swordLifeTimer += Time.deltaTime;

@@ -162,6 +162,7 @@ namespace Assets.Scripts.Enemies
             }
         }
 
+        //Spawn a ghost and a goblin head sprite
         private void CreateDeathEffects()
         {
             Ghost ghost = Instantiate(Ghost, transform.position, transform.rotation);
