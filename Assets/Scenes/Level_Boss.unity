@@ -623,13 +623,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 755785968}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2018749539}
     - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -639,11 +651,27 @@ PrefabInstance:
       value: UpdateHealth
       objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandlePlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: HeartController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoboSwordBoy, GameAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
       propertyPath: PlayerHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014350158136067353, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
+      propertyPath: PlayerDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4014350158136067354, guid: 088746f884d1fcf438da45e0c8803c65, type: 3}
@@ -967,6 +995,17 @@ RectTransform:
   m_AnchoredPosition: {x: -156, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2018749539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2303744666680366106, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
+  m_PrefabInstance: {fileID: 1864493227288458153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607bb87b4743e89449855cd51f9dd971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111418462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372343573172468348, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.15
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7372343573172468348, guid: 9c8ac3bc196519b4896827362fe9e265, type: 3}
       propertyPath: m_LocalPosition.z

@@ -17,26 +17,11 @@ public class RoboSwordBoy : Enemy
 
     private Process compiler;
     private IntPtr unityPtr;
-    //private static RoboSwordBoy instance;
-    //private StreamWriter streamWriter;
+    private static RoboSwordBoy instance;
 
     private void Awake()
     {
         unityPtr = (IntPtr)GetActiveWindow();
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //    //Sets this to not be destroyed when reloading scene
-        //    DontDestroyOnLoad(gameObject);
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-
-
-
-        Health = 6;
     }
 
     // Start is called before the first frame update
@@ -120,6 +105,13 @@ public class RoboSwordBoy : Enemy
 
 
         base.Update();
+    }
+
+    //Dont want to restart the scene when the player dies as the ML engine is running
+    public void HandlePlayerDeath()
+    {
+        Health = 6;
+        gameObject.transform.position = new Vector2(-14.8f, -4f);
     }
 
     private void OnApplicationQuit()

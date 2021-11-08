@@ -16,6 +16,7 @@ public class SwordBoy : MonoBehaviour
     public int PlayerHealth = 8;
     public Vector2 Direction = Vector2.right;
     public UnityEvent<int> PlayerHitEvent;
+    public UnityEvent PlayerDeathEvent;
 
     private bool isGrounded = false;
     private float arrowTimer = 0;
@@ -25,6 +26,7 @@ public class SwordBoy : MonoBehaviour
     private bool swordExists = false;
     private bool plunging = false;
     private SpriteRenderer spriteRenderer;
+    private int playerHealthMax;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class SwordBoy : MonoBehaviour
         {
             CharacterActions.ChangeDirection(Direction != Vector2.left, spriteRenderer, Direction);
         }
+        playerHealthMax = PlayerHealth;
     }
 
     // Update is called once per frame
@@ -97,7 +100,6 @@ public class SwordBoy : MonoBehaviour
                 PlungingAttack();
                 Plunge();
                 return;
-
             }
         }
 
@@ -176,7 +178,7 @@ public class SwordBoy : MonoBehaviour
 
             if (PlayerHealth <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                PlayerDeath();
             }
             else
             {
@@ -198,6 +200,28 @@ public class SwordBoy : MonoBehaviour
         else if (collision.gameObject.tag == "Scenery")
         {
             isGrounded = true;
+        }
+    }
+
+    //On a normal level restart on death, in the final level need to reset manually
+    private void PlayerDeath()
+    {
+        var activeScene = SceneManager.GetActiveScene();
+        if(activeScene.name != "Level_Boss")
+        {
+            SceneManager.LoadScene(activeScene.buildIndex);
+        }
+        else
+        {
+            PlayerDeathEvent.Invoke();
+            PlayerHealth = playerHealthMax;
+            PlayerHitEvent.Invoke(PlayerHealth);
+            gameObject.transform.position = new Vector2(14.3f, -2.15f);
+            isGrounded = false;
+            hitLeft = false;
+            hitRight = false;
+            hitTimer = -1;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
     }
 
