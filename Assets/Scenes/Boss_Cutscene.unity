@@ -1053,6 +1053,8 @@ MonoBehaviour:
   - But my cyborg brain can absorb their ghostly memories
   - Your victories are now just training for my machine intelligence!
   - Watch as I absorb their spirits and copy your murderous fighting style
+  - It will be absolutely, positively impossible for you to defeat a mind trained
+    to counter your every move
   - ...No I am not stalling for time!
   - ...it just takes a little while for my engine to get warmed up
 --- !u!4 &1598969445
@@ -1114,7 +1116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278.28, y: 115}
+  m_AnchoredPosition: {x: -1, y: 115}
   m_SizeDelta: {x: 340.55, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126662774
@@ -1144,7 +1146,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
