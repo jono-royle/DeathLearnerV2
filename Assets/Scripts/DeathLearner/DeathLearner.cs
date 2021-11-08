@@ -17,7 +17,9 @@ public class DeathLearner : MonoBehaviour
     private List<PlayerAction> playerActions = new List<PlayerAction>();
     private bool deathRecorded = false;
 
-    // Update is called once per frame
+    //Every update we record what buttons the player has pressed (or if they have pressed no button for 0.5 seconds)
+    //We have this info along with the current game state (player position, enemy position and movement, enemy arrows)
+    //to a tab delimited txt file which can be used for ML training
     void Update()
     {
         if (deathRecorded)

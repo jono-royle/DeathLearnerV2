@@ -101,10 +101,10 @@ public class CutsceneController : MonoBehaviour
 
     private void CreateGhost()
     {
-        Ghost ghost = Instantiate(Ghost, new Vector2(UnityEngine.Random.Range(-16.7f, -10f), 7), transform.rotation);
+        Ghost ghost = Instantiate(Ghost, new Vector2(UnityEngine.Random.Range(-16.7f, -10f), 15), transform.rotation);
         ghost.RightWayUp = false;
         ghost.GhostSpeed = UnityEngine.Random.Range(0.01f, 0.06f);
-        ghost.EndPosition = new Vector2(-14.8f, -2.83f);
+        ghost.EndPosition = new Vector2(-14.8f, -4f);
         ghostTimer = 0;
     }
 }
