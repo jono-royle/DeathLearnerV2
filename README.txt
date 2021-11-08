@@ -14,6 +14,8 @@ Copy the folder 'MLConsoleApp'
 Paste this folder into DeathLearnerV2\CompletedGame\DeathLearner_Data
 Run DeathLearner.exe in DeathLearnerV2\CompletedGame
 
+Created in Unity version 2021.1
+
 Music credits:
 The Lift Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0
