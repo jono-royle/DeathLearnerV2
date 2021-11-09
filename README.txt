@@ -9,13 +9,13 @@ as a separate command line process from within unity
 
 TO GET THE GAME WORKING:
 Download DeathLearnerV2 repo
-Go to DeathLearnerV2\CompletedGame\DeathLearner_Data\MLConsoleApp
+Go to ..\CompletedGame\DeathLearner_Data\MLConsoleApp
 Unzip the contents of folder MLConsoleApp.zip to its current location
 Run DeathLearner.exe in DeathLearnerV2\CompletedGame
 
 TO GET IT WORKING IN UNITY EDITOR:
 Download DeathLearnerV2 repo
-Go to DeathLearnerV2\Assets\MLConsoleApp
+Go to ..\Assets\MLConsoleApp
 Unzip the contents of folder MLConsoleApp.zip to its current location
 Run in Unity
 
