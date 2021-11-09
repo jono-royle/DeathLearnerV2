@@ -9,15 +9,9 @@ as a separate command line process from within unity
 
 TO GET THE GAME WORKING:
 Download DeathLearnerV2 repo
-Go to ..\CompletedGame\DeathLearner_Data\MLConsoleApp
-Unzip the contents of folder MLConsoleApp.zip to its current location
+Run the powershell script "DLInstaller.ps1" 
+(this will unzip the ML console app exe required to run the game exe or run to in unity)
 Run DeathLearner.exe in DeathLearnerV2\CompletedGame
-
-TO GET IT WORKING IN UNITY EDITOR:
-Download DeathLearnerV2 repo
-Go to ..\Assets\MLConsoleApp
-Unzip the contents of folder MLConsoleApp.zip to its current location
-Run in Unity
 
 Created in Unity version 2021.1
 
