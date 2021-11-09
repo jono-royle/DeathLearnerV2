@@ -11,7 +11,7 @@ TO GET THE GAME WORKING:
 Download DeathLearnerV2 repo
 Run the powershell script "DLInstaller.ps1" 
 (this will unzip the ML console app exe required to run the game exe or to run it in unity)
-Run DeathLearner.exe in DeathLearnerV2\CompletedGame
+Run DeathLearner.exe in ..\CompletedGame
 
 Created in Unity version 2021.1
 
