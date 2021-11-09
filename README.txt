@@ -10,7 +10,7 @@ as a separate command line process from within unity
 TO GET THE GAME WORKING:
 Download DeathLearnerV2 repo
 Run the powershell script "DLInstaller.ps1" 
-(this will unzip the ML console app exe required to run the game exe or run to in unity)
+(this will unzip the ML console app exe required to run the game exe or to run it in unity)
 Run DeathLearner.exe in DeathLearnerV2\CompletedGame
 
 Created in Unity version 2021.1
