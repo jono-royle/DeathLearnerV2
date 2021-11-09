@@ -7,12 +7,17 @@ My original plan was for the machine learning to run in the background of the un
 unable to get the ML dlls to build within the unity framework, so instead I had to settle for firing up the ML
 as a separate command line process from within unity
 
-TO GET IT WORKING:
-Download DeathLearnerV2 project folder
-Go to DeathLearnerV2\Assets
-Copy the folder 'MLConsoleApp'
-Paste this folder into DeathLearnerV2\CompletedGame\DeathLearner_Data
+TO GET THE GAME WORKING:
+Download DeathLearnerV2 repo
+Go to DeathLearnerV2\CompletedGame\DeathLearner_Data\MLConsoleApp
+Unzip the contents of folder MLConsoleApp.zip to its current location
 Run DeathLearner.exe in DeathLearnerV2\CompletedGame
+
+TO GET IT WORKING IN UNITY EDITOR:
+Download DeathLearnerV2 repo
+Go to DeathLearnerV2\Assets\MLConsoleApp
+Unzip the contents of folder MLConsoleApp.zip to its current location
+Run in Unity
 
 Created in Unity version 2021.1
 
