@@ -10,7 +10,10 @@ as a separate command line process from within unity
 TO GET THE GAME WORKING:
 Download DeathLearnerV2 repo
 Run the powershell script "DLInstaller.ps1" 
-(this will unzip the ML console app exe required to run the game exe or to run it in unity)
+(this script will unzip the ML console app exe required to run the game exe or to run it in unity. 
+Will need to set powershell executionpolicy to unrestricted or run powershell as an administrator.
+Alternatively, can manually unzip the folder ..\Assets\MLConsoleApp\MLConsoleApp.zip
+to ..\Assets\MLConsoleApp and ..\CompletedGame\MLConsoleApp)
 Run DeathLearner.exe in ..\CompletedGame
 
 Created in Unity version 2021.1
@@ -19,7 +22,7 @@ Music credits:
 The Lift Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0
 http://creativecommons.org/licenses/by/3.0/
-
+ trfytdyt
 Unholy Knight Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0
 http://creativecommons.org/licenses/by/3.0/
