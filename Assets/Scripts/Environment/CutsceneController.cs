@@ -15,6 +15,7 @@ public class CutsceneController : MonoBehaviour
     [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr hWnd);
 
     public GameObject CutsceneCanvas;
+    public GameObject ErrorCanvas;
     public Ghost Ghost;
     public float GhostSpawnRate = 0.5f;
     public Text MlProgressText;
@@ -34,6 +35,7 @@ public class CutsceneController : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
+        ErrorCanvas.SetActive(false);
         engineCompleted = false;
         dialogueCompleted = false;
 
@@ -93,10 +95,24 @@ public class CutsceneController : MonoBehaviour
         Destroy(CutsceneCanvas);
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     private async Task BuildEngine()
     {
-        var process = MLEngineStarter.BuildMachineLearningEngine();
-        await WaitForExitAsync(process);
+        try
+        {
+            var process = MLEngineStarter.BuildMachineLearningEngine();
+            await WaitForExitAsync(process);
+        }
+        catch(Exception)
+        {
+            Destroy(CutsceneCanvas);
+            ErrorCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     private void CreateGhost()
