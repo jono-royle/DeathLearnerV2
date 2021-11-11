@@ -31,8 +31,6 @@ public class DeathLearner : MonoBehaviour
         var buttonsPressed = new List<ButtonPress>();
         var actionRecorded = false;
 
-        //TODO: Currently just recording a single button press, can be multiple at once
-
         //Left Right Movement
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
